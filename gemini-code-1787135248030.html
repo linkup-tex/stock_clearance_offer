@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkUp Tex Global | Premium Drop Shoulder T-Shirt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">LinkUp Tex <span>Global</span></div>
+    </div>
+
+    <div class="hero">
+        <span class="badge">🔥 অফার শেষ হওয়ার আগেই অর্ডার করুন!</span>
+        <h1>প্রিমিয়াম হেভিওয়েট ড্রপ-শোল্ডার টি-শার্ট</h1>
+        <p>100% Organic Combed Cotton | 220+ GSM Heavy Duty Fabric</p>
+    </div>
+
+    <div class="container">
+        
+        <!-- Offers Grid with Regular Price & Discount -->
+        <div class="section-title">পছন্দের প্যাকেজ সিলেক্ট করুন (৩০০৳ বিশেষ ছাড়)</div>
+        <div class="offers-grid">
+            <div class="offer-card" onclick="selectOffer(1, 399, this)">
+                <div class="discount-badge">৩০০৳ ছাড়</div>
+                <div class="offer-title">১টি টি-শার্ট</div>
+                <div class="price-box">
+                    <span class="regular-price">৬৯৯৳</span>
+                    <span class="offer-price">৩৯৯৳</span>
+                </div>
+                <div class="offer-save">আজকের বিশেষ ডিল</div>
+            </div>
+
+            <div class="offer-card" onclick="selectOffer(2, 599, this)">
+                <div class="discount-badge">৩০০৳ ছাড়</div>
+                <div class="offer-title">২টি টি-শার্ট (কম্বো)</div>
+                <div class="price-box">
+                    <span class="regular-price">৮৯৯৳</span>
+                    <span class="offer-price">৫৯৯৳</span>
+                </div>
+                <div class="offer-save">জনপ্রিয় স্মার্ট প্যাক</div>
+            </div>
+
+            <div class="offer-card active" onclick="selectOffer(3, 999, this)">
+                <div class="popular-tag">BEST VALUE</div>
+                <div class="discount-badge">৩০০৳ ছাড়</div>
+                <div class="offer-title">৩টি টি-শার্ট (মেগা কম্বো)</div>
+                <div class="price-box">
+                    <span class="regular-price">১২৯৯৳</span>
+                    <span class="offer-price">৯৯৯৳</span>
+                </div>
+                <div class="offer-save">সর্বোচ্চ বাজেট সেভিং!</div>
+            </div>
+        </div>
+
+        <!-- Product Features/Description -->
+        <div class="features-box">
+            <h3>কেন LinkUp Tex Global-এর টি-শার্ট সেরা?</h3>
+            <ul class="feature-list">
+                <li><b>১০০% কম্বড কটন:</b> অত্যন্ত নরম ও আরামদায়ক, স্কিন-ফ্রেন্ডলি ফেব্রিক।</li>
+                <li><b>২২০+ প্রিমিয়াম GSM:</b> বাজারের সাধারণ টি-শার্টের চেয়ে অনেক বেশি টেকসই ও হেভি মেটেরিয়াল।</li>
+                <li><b>রং ও সাইজ গ্যারান্টি:</b> ১০০% কালার ফাস্টনেস, ধোয়ার পর রং উঠবে না বা ছোট হবে না।</li>
+                <li><b>পারফেক্ট স্ট্রিটওয়্যার ফিট:</b> ড্রপ-শোল্ডার ওভারসাইজড কাটিং যা আপনাকে দেবে ইউনিক লুক।</li>
+            </ul>
+        </div>
+
+        <!-- Gallery -->
+        <div class="section-title">উপলব্ধ প্রিমিয়াম কালারসমূহ</div>
+        <div class="product-gallery">
+            <div class="product-card">
+                <img src="dropsholder.base.jpg" alt="Off White T-Shirt">
+                <h4>অফ-হোয়াইট (Off-White)</h4>
+            </div>
+            <div class="product-card">
+                <img src="dropsholder.black.jpg" alt="Black T-Shirt">
+                <h4>ব্ল্যাক (Black)</h4>
+            </div>
+            <div class="product-card">
+                <img src="dropsholder.olive.jpg" alt="Olive Green T-Shirt">
+                <h4>ওলিভ গ্রিন (Olive Green)</h4>
+            </div>
+        </div>
+
+        <!-- Order Form -->
+        <div class="form-container" id="orderForm">
+            <h3 style="text-align: center; color: var(--primary); margin-bottom: 20px;">অর্ডার নিশ্চিত করতে ফর্মটি পূরণ করুন</h3>
+            <form onsubmit="sendToWhatsApp(event)">
+                <div class="form-group">
+                    <label>আপনার নাম *</label>
+                    <input type="text" id="name" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                </div>
+                <div class="form-group">
+                    <label>মোবাইল নম্বর *</label>
+                    <input type="tel" id="phone" placeholder="০1XXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>সম্পূর্ণ ঠিকানা *</label>
+                    <textarea id="address" rows="2" placeholder="জেলা, থানা এবং এলাকার নাম" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>সাইজ সিলেক্ট করুন *</label>
+                    <select id="size" required>
+                        <option value="M (Chest 40, Length 27)">M (Chest 40, Length 27)</option>
+                        <option value="L (Chest 42, Length 28)">L (Chest 42, Length 28)</option>
+                        <option value="XL (Chest 44, Length 29)">XL (Chest 44, Length 29)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>পছন্দের কালার (কম্বো হলে কালারগুলোর নাম লিখুন)</label>
+                    <input type="text" id="colors" placeholder="যেমন: ১টি ব্ল্যাক, ২টি অফ-হোয়াইট" required>
+                </div>
+
+                <div class="summary-box">
+                    <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 18px;">
+                        <span>মোট মূল্য:</span>
+                        <span id="totalPrice">৯৯৯ টাকা</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-order">অর্ডার কনফার্ম করুন 🛒</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Quick Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/8809658754629" class="btn-float btn-whatsapp" target="_blank" title="WhatsApp Chat">💬</a>
+        <a href="tel:+8809658754629" class="btn-float btn-call" title="Direct Call">📞</a>
+    </div>
+
+    <footer>
+        <p><strong>LinkUp Tex Global</strong></p>
+        <p>দক্ষিণ বনশ্রী, ঢাকা, বাংলাদেশ</p>
+        <p>Call / WhatsApp: <a href="tel:+8809658754629">+880 9658-754629</a></p>
+        <p style="margin-top: 10px;"><a href="https://www.facebook.com/rayhansikdarr" target="_blank">অফিসিয়াল ফেসবুক পেজ</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
