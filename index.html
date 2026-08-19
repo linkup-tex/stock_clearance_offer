@@ -94,7 +94,6 @@
             font-weight: 700;
             margin: 30px 0 20px;
             color: var(--primary);
-            position: relative;
         }
 
         .offers-grid {
@@ -225,13 +224,12 @@
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             color: var(--primary);
         }
+        .summary-row { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .summary-row.total { font-size: 18px; color: var(--accent); border-top: 1px dashed #cbd5e1; padding-top: 8px; margin-bottom: 0; }
 
         .submit-btn {
             width: 100%;
@@ -285,10 +283,10 @@
 
     <!-- হিরো সেকশন -->
     <section class="hero">
-        <span class="tagline">🔥 Mega Combo Madness Drop - ৩০০৳ ইনস্ট্যান্ট ছাড়</span>
+        <span class="tagline">🔥 ধামাকা ডিসকাউন্ট অফার!</span>
         <h1>প্রিমিয়াম হেভিওয়েট ড্রপ-শোল্ডার টি-শার্ট</h1>
         <p>100% Organic Combed Cotton | 220+ GSM Heavy Duty Fabric</p>
-        <a href="#order" class="btn-primary">অর্ডার করুন (৳ ৩৯৯ থেকে শুরু)</a>
+        <a href="#order" class="btn-primary">অর্ডার করুন (৳ ২৯৯ থেকে শুরু)</a>
     </section>
 
     <div class="container">
@@ -296,33 +294,33 @@
         <!-- অফার সিলেক্টর সেকশন -->
         <div class="section-title">পছন্দের অফার সিলেক্ট করুন</div>
         <div class="offers-grid">
-            <div class="offer-card" onclick="selectOffer(1, 399, this)">
-                <div class="discount-tag">৩০০৳ ছাড়</div>
+            <div class="offer-card" onclick="selectOffer(1, 299, this)">
+                <div class="discount-tag">১০১৳ ছাড়</div>
                 <div class="offer-title">১টি টি-শার্ট</div>
                 <div class="price-box">
-                    <span class="old-price">৳ ৬৯৯</span>
-                    <span class="current-price">৳ ৩৯৯</span>
+                    <span class="old-price">৳ ৪০০</span>
+                    <span class="current-price">৳ ২৯৯</span>
                 </div>
-                <div class="offer-save">আজকের বিশেষ ডিল</div>
+                <div class="offer-save">ট্রায়াল প্যাক</div>
             </div>
 
-            <div class="offer-card" onclick="selectOffer(2, 599, this)">
-                <div class="discount-tag">৩০০৳ ছাড়</div>
+            <div class="offer-card" onclick="selectOffer(2, 499, this)">
+                <div class="discount-tag">৩০১৳ ছাড়</div>
                 <div class="offer-title">২টি টি-শার্ট (কম্বো)</div>
                 <div class="price-box">
-                    <span class="old-price">৳ ৮৯৯</span>
-                    <span class="current-price">৳ ৫৯৯</span>
+                    <span class="old-price">৳ ৮০০</span>
+                    <span class="current-price">৳ ৪৯৯</span>
                 </div>
-                <div class="offer-save">জনপ্রিয় স্মার্ট প্যাক</div>
+                <div class="offer-save">স্মার্ট সেভিং প্যাক</div>
             </div>
 
-            <div class="offer-card active" onclick="selectOffer(3, 999, this)">
+            <div class="offer-card active" onclick="selectOffer(3, 749, this)">
                 <div class="popular-badge">BEST VALUE</div>
-                <div class="discount-tag">২০১৳ ছাড়</div>
+                <div class="discount-tag">৪৫১৳ ছাড়</div>
                 <div class="offer-title">৩টি টি-শার্ট (মেগা কম্বো)</div>
                 <div class="price-box">
                     <span class="old-price">৳ ১২০০</span>
-                    <span class="current-price">৳ ৯৯৯</span>
+                    <span class="current-price">৳ ৭৪৯</span>
                 </div>
                 <div class="offer-save">সর্বোচ্চ বাজেট সেভিং!</div>
             </div>
@@ -343,15 +341,15 @@
         <div class="section-title">উপলব্ধ কালারসমূহ</div>
         <div class="product-gallery">
             <div class="product-card">
-                <img src="dropsholder.base.jpg" alt="Off White Drop Shoulder T-Shirt">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop" alt="Off White Drop Shoulder T-Shirt">
                 <h4>অফ-হোয়াইট (Off-White)</h4>
             </div>
             <div class="product-card">
-                <img src="dropsholder.black.jpg" alt="Black Drop Shoulder T-Shirt">
+                <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500&auto=format&fit=crop" alt="Black Drop Shoulder T-Shirt">
                 <h4>ব্ল্যাক (Black)</h4>
             </div>
             <div class="product-card">
-                <img src="dropsholder.olive.jpg" alt="Olive Green Drop Shoulder T-Shirt">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500&auto=format&fit=crop" alt="Olive Green Drop Shoulder T-Shirt">
                 <h4>ওলিভ গ্রিন (Olive Green)</h4>
             </div>
         </div>
@@ -371,6 +369,12 @@
                 <label for="address">সম্পূর্ণ ঠিকানা *</label>
                 <textarea id="address" rows="3" placeholder="জেলা, থানা ও এলাকার নাম লিখুন" required></textarea>
 
+                <label for="area">ডেলিভারি এরিয়া *</label>
+                <select id="area" onchange="updateDeliveryCharge()" required>
+                    <option value="80">ঢাকার ভেতরে (ডেলিভারি চার্জ ৳৮০)</option>
+                    <option value="150">ঢাকার বাইরে (ডেলিভারি চার্জ ৳১৫০)</option>
+                </select>
+
                 <label for="size">সাইজ সিলেক্ট করুন *</label>
                 <select id="size" required>
                     <option value="M (Chest 40, Length 27)">M (Chest 40, Length 27)</option>
@@ -382,8 +386,18 @@
                 <input type="text" id="colors" placeholder="যেমন: ১টি ব্ল্যাক, ২টি অফ-হোয়াইট" required>
 
                 <div class="price-summary">
-                    <span>মোট প্রোডাক্ট মূল্য:</span>
-                    <span id="totalPrice">৳ ৯৯৯</span>
+                    <div class="summary-row">
+                        <span>প্রোডাক্ট মূল্য:</span>
+                        <span id="productPrice">৳ ৭৪৯</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>ডেলিভারি চার্জ:</span>
+                        <span id="deliveryCharge">৳ ৮০</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>সর্বমোট মূল্য:</span>
+                        <span id="grandTotal">৳ ৮২৯</span>
+                    </div>
                 </div>
 
                 <button type="submit" class="submit-btn">অর্ডার কনফার্ম করুন 🛒</button>
@@ -394,7 +408,7 @@
 
     <!-- ফ্লোটিং বাটনসমূহ -->
     <div class="floating-buttons">
-        <a href="https://wa.me/8809658754629" class="btn-float btn-whatsapp-float" target="_blank" title="WhatsApp Chat">💬</a>
+        <a href="https://wa.me/8801817762211" class="btn-float btn-whatsapp-float" target="_blank" title="WhatsApp Chat">💬</a>
         <a href="tel:+8809658754629" class="btn-float btn-call-float" title="Direct Call">📞</a>
     </div>
 
@@ -402,16 +416,16 @@
     <footer>
         <p><strong>LinkUp Tex Global</strong></p>
         <p>দক্ষিণ বনশ্রী, ঢাকা, বাংলাদেশ</p>
-        <p>যোগাযোগ: <a href="tel:+8809658754629">09658-754629</a> | WhatsApp: <a href="https://wa.me/8809658754629">+880 9658-754629</a></p>
+        <p>যোগাযোগ: <a href="tel:+8809658754629">09658-754629</a> | WhatsApp: <a href="https://wa.me/8801817762211">+880 1817-762211</a></p>
         <p style="margin-top: 10px;">
-            <a href="https://www.facebook.com/rayhansikdarr" target="_blank">Facebook Page</a>
+            <a href="https://www.facebook.com/linkuptexglobal" target="_blank">Facebook Page</a>
         </p>
         <p style="margin-top: 15px; font-size: 12px; opacity: 0.6;">© 2026 LinkUp Tex Global. All Rights Reserved.</p>
     </footer>
 
     <script>
         let selectedQty = 3;
-        let selectedPrice = 999;
+        let selectedPrice = 749;
 
         function selectOffer(qty, price, element) {
             selectedQty = qty;
@@ -420,7 +434,20 @@
             document.querySelectorAll('.offer-card').forEach(card => card.classList.remove('active'));
             element.classList.add('active');
             
-            document.getElementById('totalPrice').innerText = '৳ ' + price;
+            calculateTotal();
+        }
+
+        function updateDeliveryCharge() {
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const deliveryCharge = parseInt(document.getElementById('area').value);
+            const total = selectedPrice + deliveryCharge;
+
+            document.getElementById('productPrice').innerText = '৳ ' + selectedPrice;
+            document.getElementById('deliveryCharge').innerText = '৳ ' + deliveryCharge;
+            document.getElementById('grandTotal').innerText = '৳ ' + total;
         }
 
         function sendToWhatsApp(e) {
@@ -429,8 +456,12 @@
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const address = document.getElementById('address').value;
+            const areaSelect = document.getElementById('area');
+            const areaText = areaSelect.options[areaSelect.selectedIndex].text;
+            const deliveryCharge = parseInt(areaSelect.value);
             const size = document.getElementById('size').value;
             const colors = document.getElementById('colors').value;
+            const grandTotal = selectedPrice + deliveryCharge;
 
             const whatsappNumber = "8809658754629";
             
@@ -438,9 +469,11 @@
                 `*নাম:* ${encodeURIComponent(name)}%0A` +
                 `*ফোন নম্বর:* ${encodeURIComponent(phone)}%0A` +
                 `*ঠিকানা:* ${encodeURIComponent(address)}%0A` +
-                `*প্যাকেজ:* ${selectedQty} টি টি-শার্ট (মূল্য: ৳${selectedPrice})%0A` +
+                `*ডেলিভারি এরিয়া:* ${encodeURIComponent(areaText)}%0A` +
+                `*প্যাকেজ:* ${selectedQty} টি টি-শার্ট (প্রোডাক্ট মূল্য: ৳${selectedPrice})%0A` +
                 `*সাইজ:* ${encodeURIComponent(size)}%0A` +
-                `*কালার পছন্দ:* ${encodeURIComponent(colors)}`;
+                `*কালার পছন্দ:* ${encodeURIComponent(colors)}%0A%0A` +
+                `*সর্বমোট মূল্য:* ৳${grandTotal}`;
 
             window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
         }
