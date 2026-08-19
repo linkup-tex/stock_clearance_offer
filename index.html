@@ -325,7 +325,7 @@
             <h2>অর্ডার কনফার্ম করুন</h2>
             <p>নিচের পছন্দের অফারটি বেছে নিয়ে ক্যাশ অন ডেলিভারিতে ফর্মটি পূরণ করুন:</p>
 
-            <!-- কম্বো অফার সিলেক্টর (অর্ডারের ঠিক উপরে) -->
+            <!-- কম্বো অফার সিলেক্টর -->
             <div class="offers-grid">
                 <div class="offer-card" onclick="selectOffer(1, 299, this)">
                     <div class="discount-tag">১০১৳ ছাড়</div>
@@ -359,32 +359,41 @@
                 </div>
             </div>
 
-            <!-- ফর্ম -->
-            <form onsubmit="sendToWhatsApp(event)" class="order-form">
+            <!-- জিমেইল ইন্টিগ্রেশন সহ অর্ডার ফর্ম -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="order-form">
+                <!-- Web3Forms Config Hidden Fields -->
+                <input type="hidden" name="access_key" value="fb725878-65a7-43b0-8154-ed8a86718f86">
+                <input type="hidden" name="subject" value="New T-Shirt Order - LinkUp Tex Global">
+                <input type="hidden" name="from_name" value="LinkUp Tex Website">
+                
+                <!-- ডাইনামিক ফিল্ডস -->
+                <input type="hidden" id="hidden_package" name="Selected Package" value="3 T-Shirts (Tk 749)">
+                <input type="hidden" id="hidden_grand_total" name="Grand Total" value="Tk 829">
+
                 <label for="name">আপনার নাম *</label>
-                <input type="text" id="name" placeholder="সম্পূর্ণ নাম লিখুন" required>
+                <input type="text" id="name" name="Customer Name" placeholder="সম্পূর্ণ নাম লিখুন" required>
 
                 <label for="phone">মোবাইল নম্বর *</label>
-                <input type="tel" id="phone" placeholder="১১ ডিজিটের মোবাইল নম্বর" required>
+                <input type="tel" id="phone" name="Phone Number" placeholder="১১ ডিজিটের মোবাইল নম্বর" required>
 
                 <label for="address">সম্পূর্ণ ঠিকানা *</label>
-                <textarea id="address" rows="3" placeholder="জেলা, থানা ও এলাকার নাম লিখুন" required></textarea>
+                <textarea id="address" name="Full Address" rows="3" placeholder="জেলা, থানা ও এলাকার নাম লিখুন" required></textarea>
 
                 <label for="area">ডেলিভারি এরিয়া *</label>
-                <select id="area" onchange="updateDeliveryCharge()" required>
+                <select id="area" name="Delivery Area" onchange="updateDeliveryCharge()" required>
                     <option value="80">ঢাকার ভেতরে (ডেলিভারি চার্জ ৳৮০)</option>
                     <option value="150">ঢাকার বাইরে (ডেলিভারি চার্জ ৳১৫০)</option>
                 </select>
 
                 <label for="size">সাইজ সিলেক্ট করুন *</label>
-                <select id="size" required>
+                <select id="size" name="Selected Size" required>
                     <option value="M (Chest 40, Length 27)">M (Chest 40, Length 27)</option>
                     <option value="L (Chest 42, Length 28)">L (Chest 42, Length 28)</option>
                     <option value="XL (Chest 44, Length 29)">XL (Chest 44, Length 29)</option>
                 </select>
 
                 <label for="colors">পছন্দের কালার (কম্বো হলে কালারগুলোর নাম লিখুন) *</label>
-                <input type="text" id="colors" placeholder="যেমন: ১টি ব্ল্যাক, ২টি অফ-হোয়াইট" required>
+                <input type="text" id="colors" name="Color Choices" placeholder="যেমন: ১টি ব্ল্যাক, ২টি অফ-হোয়াইট" required>
 
                 <div class="price-summary">
                     <div class="summary-row">
@@ -449,34 +458,10 @@
             document.getElementById('productPrice').innerText = '৳ ' + selectedPrice;
             document.getElementById('deliveryCharge').innerText = '৳ ' + deliveryCharge;
             document.getElementById('grandTotal').innerText = '৳ ' + total;
-        }
 
-        function sendToWhatsApp(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const areaSelect = document.getElementById('area');
-            const areaText = areaSelect.options[areaSelect.selectedIndex].text;
-            const deliveryCharge = parseInt(areaSelect.value);
-            const size = document.getElementById('size').value;
-            const colors = document.getElementById('colors').value;
-            const grandTotal = selectedPrice + deliveryCharge;
-
-            const whatsappNumber = "8801817762211";
-            
-            const message = `*নতুন অর্ডার (LinkUp Tex Global)*%0A%0A` +
-                `*নাম:* ${encodeURIComponent(name)}%0A` +
-                `*ফোন নম্বর:* ${encodeURIComponent(phone)}%0A` +
-                `*ঠিকানা:* ${encodeURIComponent(address)}%0A` +
-                `*ডেলিভারি এরিয়া:* ${encodeURIComponent(areaText)}%0A` +
-                `*প্যাকেজ:* ${selectedQty} টি টি-শার্ট (প্রোডাক্ট মূল্য: ৳${selectedPrice})%0A` +
-                `*সাইজ:* ${encodeURIComponent(size)}%0A` +
-                `*কালার পছন্দ:* ${encodeURIComponent(colors)}%0A%0A` +
-                `*সর্বমোট মূল্য:* ৳${grandTotal}`;
-
-            window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+            /* Hidden Fields Update for Email */
+            document.getElementById('hidden_package').value = `${selectedQty} T-Shirts (Tk ${selectedPrice})`;
+            document.getElementById('hidden_grand_total').value = `Tk ${total}`;
         }
     </script>
 </body>
